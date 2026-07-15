@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Numbers</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div>
+        <header>
+            <h2>Number Guessing Game</h2>
+            <h4>Guess a number between 1 - 20</h4>
+        </header>
+        <form id="submit" novalidate >
+            <input id="guess" type="number" placeholder="???" max="20" min="1" required>
+            <button id="button" type="submit" form="submit">Guess</button>
+            <button id ="reset" style="background-color: rgb(191, 0, 255); display: none;">Reload</button>
+        </form>
+        <ul>
+            <li id="firstlist">Previous Guess: N/A</li>
+            <li id="secondlist">Guesses Left: 3</li>
+        </ul>
+        <p id="result"><span>Try your Luck 😁</span></p>
+    </div>
+</body>
+</html>

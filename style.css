@@ -1,0 +1,138 @@
+@font-face {
+    font-family: "Google";
+    src: url(GoogleSansFlex_9pt-Thin.ttf);
+}
+@font-face {
+    font-family:"Nunito";
+    src: url(Nunito-Black.ttf);
+}
+:root{
+    --bg-color: rgb(0, 103, 220);
+    --text-color: blue;
+    --secondary-color: grey;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+div{
+
+    width: 60%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.5rem;
+}
+div header h2{
+    margin-top: auto;
+    background-color: rgb(0, 0, 206);
+    font-family: "Google";
+    font-size: 1.1rem;
+    padding: 2px 50px;
+    color: white;
+
+}
+div header h4{
+    font-family: "Nunito";
+    font-size: 0.85rem;
+    text-align: center;
+
+}
+div form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div input{
+    width: 9rem;
+    height: 2.2rem;
+    padding: 5px;
+    caret-color: rgb(0, 162, 255);
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 4px;
+    border: 1.5px solid black;
+    transition: all 0.2s ease;
+}
+.invalid{
+    border: 2px solid #ff0000;
+    
+}
+.animation{
+    animation: error 0.3s ease-in-out;
+}
+@keyframes error {
+    0%{
+        margin: 0
+    }
+    25%{
+        margin-left: 2px;
+    }
+    50%{
+        margin: 0;
+    }
+    75%{
+        margin-right: 2px;
+    }
+    100%{
+        margin: 0;
+    }
+
+}
+
+div input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+div input:focus{
+    outline: none;
+    
+}
+div button{
+    margin-top: 30px;
+    width: 120px;
+    height: 40px;
+    background-color: blue;
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+button:hover{
+    transform: translateY(-3px);
+}
+button:active{
+    background-color: rgb(124, 117, 139);
+}
+div ul{
+    list-style: none;
+    font-family: "Google";
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 12px;
+    padding: 10px 50px;
+    box-shadow: 2px 4px 16px rgba(0, 119, 255, 0.245);
+}
+div p{
+    margin-top: 25px;
+    font-size: 18px;
+    font-family: "Nunito";
+    color: blue;
+    
+}
