@@ -5,14 +5,14 @@ const result = document.getElementById("result")
 const guess = document.getElementById("guess")
 const reset = document.getElementById("reset")
 const button = document.getElementById("button")
+const winSound = document.getElementById("youWin")
+const loseSound = document.getElementById("youLose")
 const answer = Math.floor(Math.random() * 10) + 1
 
-console.log(answer)
 
 let attempts = 3
 form.addEventListener("submit",(event) => {
     event.preventDefault()
-
     if(guess.value > answer){
         firstlist.textContent = `Previous Guess: ${guess.value}`
         attempts--
@@ -30,7 +30,6 @@ form.addEventListener("submit",(event) => {
         result.style.color = "#ff0000"
         result.textContent = "Enter a valid number"
         guess.classList.add("invalid")
-        guess.classList.add("animation")
     }
 
     if(attempts < 1){
@@ -40,6 +39,8 @@ form.addEventListener("submit",(event) => {
         result.textContent = "You Guessed Wrong 😞"
         button.style.display = "none"
         reset.style.display = "block"
+        loseSound.currentTime = 0.08
+        loseSound.play()
     }
     if(guess.value == answer){
         guess.disabled = true
@@ -48,6 +49,8 @@ form.addEventListener("submit",(event) => {
         result.textContent = "Guess is correct 🤩"
         button.style.display = "none"
         reset.style.display = "block"
+        winSound.currentTime = 0
+        winSound.play()
         
     }
     reset.addEventListener("click" ,() =>{

@@ -16,7 +16,7 @@
         <form id="submit" novalidate >
             <input id="guess" type="number" placeholder="???" max="10" min="1" required>
             <button id="button" type="submit" form="submit">Guess</button>
-            <button id ="reset" style="background-color: rgb(191, 0, 255); display: none;">Reload</button>
+            <button id ="reset">Reload</button>
         </form>
         <ul>
             <li id="firstlist">Previous Guess: N/A</li>
@@ -24,5 +24,7 @@
         </ul>
         <p id="result"><span>Try your Luck 😁</span></p>
     </div>
+    <audio  id="youWin" src="you-win.mp3"></audio>
+    <audio id="youLose" src="you-lose.mp3"></audio>
 </body>
 </html>
