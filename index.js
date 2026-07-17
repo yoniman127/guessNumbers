@@ -5,83 +5,55 @@ const result = document.getElementById("result")
 const guess = document.getElementById("guess")
 const reset = document.getElementById("reset")
 const button = document.getElementById("button")
-const answer = Math.floor(Math.random() * 20) + 1
+const answer = Math.floor(Math.random() * 10) + 1
 
 console.log(answer)
 
-let left = ['1', '2', '3']
+let attempts = 3
 form.addEventListener("submit",(event) => {
     event.preventDefault()
 
+    if(guess.value > answer){
+        firstlist.textContent = `Previous Guess: ${guess.value}`
+        attempts--
+        secondlist.textContent = `Guesses left: ${attempts} `
+        result.textContent = "Guess is too high 😅"
+    }
+
+    if(guess.value < answer){
+        firstlist.textContent = `Previous Guesses: ${guess.value}`
+        attempts--
+        secondlist.textContent = `Guesses left: ${attempts} `
+        result.textContent = "Guess is too low 😉"
+    }
     if(guess.value === "" || !guess.checkValidity()){
         result.style.color = "#ff0000"
         result.textContent = "Enter a valid number"
         guess.classList.add("invalid")
         guess.classList.add("animation")
     }
-    if(guess.value > answer){
-        firstlist.textContent = `Previous Guess: ${guess.value}`
-        left.pop()
-        secondlist.textContent = `Guesses left: ${left.length} `
-        result.textContent = "Guess is too high 😅"
-    }
-    if(guess.value < answer){
-        firstlist.textContent = `Previous Guesses: ${guess.value}`
-        left.pop()
-        secondlist.textContent = `Guesses left: ${left.length} `
-        result.textContent = "Guess is too low 😉"
+
+    if(attempts < 1){
+        guess.disabled = true
+        result.style.color = "#ff0000"
+        guess.style.borderColor = "#ff0000"
+        result.textContent = "You Guessed Wrong 😞"
+        button.style.display = "none"
+        reset.style.display = "block"
     }
     if(guess.value == answer){
-        firstlist.textContent = `Previous Guess: ${guess.value}`
+        guess.disabled = true
         result.style.color = "#00ff00"
-        result.textContent = "Guess is correct 🤩"
-        guess.disabled = true
         guess.style.borderColor = "#00ff00"
+        result.textContent = "Guess is correct 🤩"
         button.style.display = "none"
         reset.style.display = "block"
-
         
-    }
-    if(left.length < 1){
-        guess.disabled = true
-        guess.style.borderColor = "transparent"
-        result.textContent = "You Guessed Wrong 😞"
-        result.style.color = "#ff0000"
-        button.style.display = "none"
-        reset.style.display = "block"
     }
     reset.addEventListener("click" ,() =>{
         form.submit()
     })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

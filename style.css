@@ -25,8 +25,8 @@ body{
 
 div{
 
-    width: 60%;
-    min-height: 400px;
+    width: min(90%, 480px);
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +38,7 @@ div header h2{
     background-color: rgb(0, 0, 206);
     font-family: "Google";
     font-size: 1.1rem;
-    padding: 2px 50px;
+    padding: 2px 6vw;
     color: white;
 
 }
@@ -54,7 +54,7 @@ div form{
     align-items: center;
 }
 div input{
-    width: 9rem;
+    width: min(9rem, 40vw);
     height: 2.2rem;
     padding: 5px;
     caret-color: rgb(0, 162, 255);
@@ -126,7 +126,7 @@ div ul{
     font-weight: bold;
     margin-top: 30px;
     font-size: 12px;
-    padding: 10px 50px;
+    padding: 10px 4vw;
     box-shadow: 2px 4px 16px rgba(0, 119, 255, 0.245);
 }
 div p{
