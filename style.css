@@ -16,12 +16,60 @@ body{
     padding: 0;
     box-sizing: border-box;
     background: linear-gradient(90deg, #56CCF2, #2F80ED);
+
+}
+body > section{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 90vh;
     overflow: hidden;
+}
+nav {
+    padding: 10px 15px;
+    position: relative;
+    display: inline-block;
+
+
+}
+nav > section  svg{
+    fill: #ebebeb;
+
+}
+nav dialog{
+    position: absolute;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.179);
+
+    font-family: "Google";
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.619);
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.244);
+    color: rgba(255, 255, 255, 0.762);
+    padding: 0;
+    overflow: hidden;
+    margin-left: 20px;
+    width: 200px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+nav dialog:focus{
+    outline: none;
+}
+
+
+nav dialog p{
+    margin: 0;
+    padding: 12px;
+    transition: all 0.3s ease;
+    
+}
+nav dialog p:hover{
+    background-color: rgba(255, 255, 255, 0.404);
+    
 }
 
 div{
@@ -67,9 +115,12 @@ div input{
     border: 1.5px solid black;
     transition: all 0.2s ease;
 }
-.invalid{
+.invalidBorder{
     border: 2px solid #ff0000;
     
+}
+.invalidText{
+    color: red;
 }
 
 div input::-webkit-inner-spin-button{
@@ -95,7 +146,6 @@ div button{
     box-shadow: 0px 5px 20px rgba(0, 119, 255, 0.377);
 }
 div button[id = "reset"]{
-
     background: linear-gradient(90deg,#4776E6 ,#8E54E9);
     display: none;
 }
@@ -122,5 +172,4 @@ div p{
     font-size: 18px;
     font-family: "Nunito";
     color: #021B79;
-    
 }
